@@ -1,25 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <!-- Header -->
-    <div class="header">
-        <h3>Mediee</h3>
-    </div>
+    <header class="header">
+      <nav class="top-navbar">
+        <a href="#" class="nav-logo">Mediee</a>
+        <ul class="nav-menu">
+          <li class="nav-item">
+            <a href="#" class="nav-link">Dashboard</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">Residents</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">Staff</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">History</a>
+          </li>
+        </ul>
+        <div class="hamburger">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+      </nav>
+    </header>
     <!-- Sidebar -->
     <div class="sidebar">
-        <ul class="items-container">
-            <li class="item"><a href="#" class="item-active">Dashboard</a></li>
-            <li class="item"><a href="#">Residents</a></li>
-            <li class="item"><a href="#">Staff</a></li>
-            <li class="item"><a href="#">History</a></li>
-        </ul>
+      <ul class="items-container">
+        <li class="item"><a href="#" class="item-active">Dashboard</a></li>
+        <li class="item"><a href="#">Residents</a></li>
+        <li class="item"><a href="#">Staff</a></li>
+        <li class="item"><a href="#">History</a></li>
+      </ul>
     </div>
-</body>
+
+    <div class="container">
+      <p class="date">31 August 2021</p>
+      <h1>Hi Dayne, <span class="thin-letter">Welcome Back 👋</span></h1>
+
+      <div class="dashboard-menu">
+        <button class="button-item item-active">Tasks</button>
+        <button class="button-item">Notes</button>
+        <button class="button-item">Residents</button>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
 </html>

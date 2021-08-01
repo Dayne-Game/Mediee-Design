@@ -1,78 +1,199 @@
 :root {
-    --font: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"
+  --font: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    background: #f4f4f4;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f4f4f4;
 
-    font-size: 1rem;
-    font-weight: 400;
-    line-height: 1.5;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
 }
 
 ul {
-    list-style-type: none;
+  list-style-type: none;
 }
 
 a {
-    text-decoration: none;
+  text-decoration: none;
+}
+
+.container {
+  width: calc(100% - 250px);
+  margin-top: 60px;
+  margin-left: 250px;
+  padding: 30px;
 }
 
 .header {
-    position: fixed;
-    left: 0;
-    top: 0;
+  position: fixed;
+  left: 0;
+  top: 0;
 
-    width: 100%;
-    height: 60px;
-    background: white;
+  width: 100%;
+  background: white;
 
-    line-height: 60px;
-    padding-left: 20px;
-    padding-right: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.top-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  height: 60px;
 }
 
 .sidebar {
-    position: fixed;
-    left: 0;
-    bottom: 0;
+  position: fixed;
+  left: 0;
+  bottom: 0;
 
-    height: calc(100vh - 60px);
-    width: 250px;
-    border-top: 1px solid #f4f4f4;
+  height: calc(100vh - 60px);
+  width: 250px;
+  border-top: 1px solid #f4f4f4;
 
-    padding: 20px;
+  padding: 20px;
 
-    background: white;
+  background: white;
+
+  transition: 0.5s;
+  z-index: 1;
+}
+
+.items-container {
+  margin-top: 1rem;
 }
 
 .item {
-    margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
 }
 
 .item > a {
-    display: block;
-    padding: .5rem 1rem;
-    color: #212529;
-    transition: color .15s ease-in-out, background-color .15s ease-in-out,border-color .15s ease-in-out;
-    border-radius: .25rem;
+  display: block;
+  padding: 0.5rem 1rem;
+  color: #212529;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+  border-radius: 0.25rem;
 }
 
 /* Sidebar Item Hover */
 .item > a:hover {
-    background: #eee;
-    color: #333 !important;
+  background: #eee;
+  color: #333 !important;
 }
 
 .item-active {
-    background: rgb(208, 74, 109);
-    color: #fff !important;
-    border-radius: .25rem;
+  background: rgb(208, 74, 109) !important;
+  color: #fff !important;
+  border-radius: 0.25rem;
+}
+
+.hamburger {
+  display: none;
+}
+
+.bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  background-color: #101010;
+}
+
+.nav-menu {
+  display: none;
+}
+
+.nav-item {
+  margin-left: 2rem;
+}
+
+.nav-link {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #475569;
+}
+
+.nav-link:hover {
+  color: #333;
+}
+
+.nav-logo {
+  font-size: 2rem;
+  font-weight: 500;
+  color: #333;
+}
+
+.thin-letter {
+  font-weight: lighter;
+  color: #444;
+}
+
+@media only screen and (max-width: 1300px) {
+  .nav-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .sidebar {
+    display: none !important;
+  }
+
+  .container {
+    width: 100% !important;
+    margin-left: 0px !important;
+    padding: 20px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .nav-menu {
+    position: fixed;
+    left: -100%;
+    top: 60px;
+    flex-direction: column;
+    background-color: #fff;
+    width: 100%;
+    text-align: center;
+    transition: 0.3s;
+    border-top: 1px solid #f4f4f4;
+    box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+  }
+
+  .nav-menu.active {
+    left: 0;
+  }
+
+  .nav-item {
+    margin: 1.3rem 0;
+  }
+
+  .hamburger {
+    display: block;
+    cursor: pointer;
+  }
+
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
 }
